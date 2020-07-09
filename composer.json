@@ -9,5 +9,7 @@
             "email": "rezarahmanudin@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "fpdf/fpdf": "^1.82"
+    }
 }
