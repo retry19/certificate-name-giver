@@ -1,0 +1,13 @@
+{
+    "name": "rezar/certificate-name-giver",
+    "description": "Automatic certificate name giver website",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Reza Rachmanuddin",
+            "email": "rezarahmanudin@gmail.com"
+        }
+    ],
+    "require": {}
+}
