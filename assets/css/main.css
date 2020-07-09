@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* options form section  */
+.options {
+  display: none;
+}
+
+/* preview image section */
+.preview {
+  display: none;
+}
+.preview #img-preview {
+  display: none;
+}
+.preview canvas {
+  max-width: 100%;
+}
+
+/* footer */
+footer .author {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
