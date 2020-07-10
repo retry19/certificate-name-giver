@@ -28,17 +28,16 @@ if ($zip->open($zipTmp, ZipArchive::OVERWRITE | ZipArchive::CREATE)) {
         $pdf->SetFont('Arial', '', $fontSize + 12);
         $pdf->SetXY(10, 210 * $yAxis / 100);
         $pdf->Cell(0, 0, $name, 0, 0, 'C');
-        $content = $pdf->Output('F', 'tmp/' . $name . '.pdf');
-        $zip->addFile('tmp/' . $name . '.pdf', $name . '.pdf');
+        $pdf->Output('F', "tmp/{$name}.pdf");
+        $zip->addFile("tmp/{$name}.pdf", "{$name}.pdf");
     }
 } else {
-    echo "cant open!!";
+    echo 'cant open!!';
     exit;
 }
 
-if ($zip->close() === false) {
-    exit("Error creating ZIP file");
-}
+if ($zip->close() === false)
+    exit('Error creating ZIP file');
 
 if (file_exists($zipTmp)) {
     header('Content-Type: application/zip');
@@ -49,4 +48,10 @@ if (file_exists($zipTmp)) {
     readfile($zipTmp);
 } else {
     exit('Could not find zip file to download!');
+}
+
+$tmp = glob('tmp/*');
+foreach ($tmp as $file) {
+    if (is_file($file))
+        unlink($file);
 }
