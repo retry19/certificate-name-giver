@@ -4,6 +4,9 @@ let image = document.querySelector("#img-preview");
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 
+let fontSize;
+let cY;
+
 const loadImage = (e) => {
   image.src = URL.createObjectURL(event.target.files[0]);
   image.onload = () => {
@@ -14,10 +17,7 @@ const loadImage = (e) => {
   previewSection.display = "block";
 };
 
-let fontSize;
-let cY;
-
-const editCanvas = () => {
+const reloadCanvas = setInterval(() => {
   if (canvas.height != image.height) {
     image = document.querySelector("#img-preview");
     canvas.width = image.width;
@@ -25,7 +25,9 @@ const editCanvas = () => {
     canvas.crossOrigin = "Anonymous";
     ctx.drawImage(image, 0, 0);
   }
+}, 500);
 
+const editCanvas = () => {
   fontSize = document.querySelector("#fsize").value;
   cY = document.querySelector("#y").value;
 

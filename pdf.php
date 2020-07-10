@@ -15,18 +15,6 @@ $imaegType = pathinfo($image, PATHINFO_EXTENSION);
 $imageData = file_get_contents($image);
 $imageBase64 = 'data:image/' . $imaegType . ';base64,' . base64_encode($imageData);
 
-// var_dump(time());
-// die;
-
-// $pdf = new FPDF('L');
-// for ($i = 0; $i < count($names); $i++) {
-//     $pdf->AddPage();
-//     $pdf->Image($imageBase64, 0, 0, 0, 210, 'jpg');
-//     $pdf->SetFont('Arial', '', $fontSize + 12);
-//     $pdf->SetXY(10, 210 * $yAxis / 100);
-//     $pdf->Cell(0, 0, $names[$i], 0, 0, 'C');
-// }
-// $pdf->Output('', 'reza.pdf');
 $zipName = 'certificate-by-re_try.zip';
 $zipTmp = 'tmp/' . $zipName;
 
