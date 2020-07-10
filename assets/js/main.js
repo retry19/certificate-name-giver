@@ -14,6 +14,9 @@ const loadImage = (e) => {
   previewSection.display = "block";
 };
 
+let fontSize;
+let cY;
+
 const editCanvas = () => {
   if (canvas.height != image.height) {
     image = document.querySelector("#img-preview");
@@ -23,8 +26,8 @@ const editCanvas = () => {
     ctx.drawImage(image, 0, 0);
   }
 
-  let fontSize = document.querySelector("#fsize").value;
-  let cY = document.querySelector("#y").value;
+  fontSize = document.querySelector("#fsize").value;
+  cY = document.querySelector("#y").value;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(image, 0, 0);
