@@ -36,10 +36,6 @@ const editCanvas = () => {
 
   ctx.font = `${fontSize}pt Arial`;
   ctx.fillStyle = "black";
-  ctx.fillText(
-    "Reza Rachmanuddin",
-    canvas.width / 2,
-    (canvas.height / 100) * cY
-  );
+  ctx.fillText("Your Name", canvas.width / 2, (canvas.height / 100) * cY);
   ctx.textAlign = "center";
 };
